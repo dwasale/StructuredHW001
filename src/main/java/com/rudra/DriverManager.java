@@ -11,7 +11,8 @@ public class DriverManager extends Utils {
         driver = new ChromeDriver();
         String url = "https://demo.nopcommerce.com/";
         driver.get(url);
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
+        driver.manage().window().maximize();
 
     }
 

@@ -1,5 +1,6 @@
 package com.rudra;
 
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
@@ -13,7 +14,14 @@ public class BaseTest extends Utils{
     }
 
     @AfterMethod
-    public void tearDown(){
+    public void tearDown(ITestResult result){
+        if (!result.isSuccess()){
+            try {
+                takeSnapShot(result.getName());
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        }
         driverManager.closeBrowser();
     }
 

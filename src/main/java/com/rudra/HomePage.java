@@ -6,6 +6,7 @@ import org.testng.Assert;
 public class HomePage extends Utils{
 
     private By _voteButton = By.id("vote-poll-1");
+    private By _logo = By.linkText("nopCommerce demo store");
 
     //To check the correct url
     public void toVerifyBrowserHasCorrectURL(){

@@ -6,5 +6,5 @@ import org.openqa.selenium.WebDriver;
 public class BasePage {
 
     //Declaring the webdriver
-    protected WebDriver driver;
+    protected static WebDriver driver;
 }
